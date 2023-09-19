@@ -3,9 +3,41 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'id',
+        'nombre',
+        'ap_paterno',
+        'ap_materno',
+        'sexo',
+        'Genero',
+        'fecha_nacimiento',
+        'titulo',
+        'puesto',
+        'telefono',
+        'celular',
+        'rfc',
+        'curp',
+        'user_id',
+    ];
+
+    protected $dates = [
+      'deleted_at'
+    ];
+
+    //FUNCIONES
+    public function user(){
+		//relacion con usuario
+    return $this->belongsTo(User::class);
+  	}
+    public function adress()
+    {
+        return $this->hasMany(EmployeeAdress::class);
+    }
 }

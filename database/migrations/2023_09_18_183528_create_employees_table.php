@@ -12,7 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('nombre');
+            $table->string('ap_paterno');
+            $table->string('ap_materno')->nullable();
+            $table->string('sexo');
+            $table->string('Genero');
+            $table->date('fecha_nacimiento')->nullable();
+            $table->string('titulo');
+            $table->string('puesto');
+            $table->string('telefono')->nullable();
+            $table->string('celular');
+            $table->string('rfc')->nullable();
+            $table->string('curp')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
