@@ -17,7 +17,7 @@ class CustomerAdress extends Model
         'numero_ext',
         'colonia',
         'municipio',
-        'ciudad'
+        'ciudad',
         'estado',
         'codigo_postal',
         'customer_id',

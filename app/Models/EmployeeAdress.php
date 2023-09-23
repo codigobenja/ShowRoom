@@ -17,7 +17,7 @@ class EmployeeAdress extends Model
         'numero_ext',
         'colonia',
         'municipio',
-        'ciudad'
+        'ciudad',
         'estado',
         'codigo_postal',
         'employee_id',
