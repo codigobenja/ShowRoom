@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('binnacles', function (Blueprint $table) {
+        Schema::create('inventory_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('usuario');
-            $table->text('accion');
-            $table->timestamp('published_at');
+            $table->string('nombre');
+            $table->string('url');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('binnacles');
+        Schema::dropIfExists('inventory_categories');
     }
 };

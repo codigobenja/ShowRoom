@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class EmployeeAdress extends Model
 {
     use HasFactory, SoftDeletes;
-
+    //proteccion de datos
     protected $fillable = [
         'id',
         'calle',
@@ -29,7 +29,6 @@ class EmployeeAdress extends Model
 
     //FUNCIONES
     public function employee(){
-		//relacion con usuario
-    return $this->belongsTo(EmployeeAdress::class);
+      return $this->belongsTo(Employee::class);
   	}
 }

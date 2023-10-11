@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class NewsCategory extends Model
+class InventoryCategory extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -14,9 +14,9 @@ class NewsCategory extends Model
     	return 'url';
     }
 
-    public function newss(){
+    public function inventories(){
       //relacion con el modelo news
-    	return $this->hasMany(News::class);
+    	return $this->hasMany(Inventory::class);
     }
 
     public function setNameAttribute($name){

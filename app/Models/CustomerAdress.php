@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class CustomerAdress extends Model
 {
     use HasFactory, SoftDeletes;
-
+    //proteccion de datos
     protected $fillable = [
         'id',
         'calle',
@@ -30,6 +30,6 @@ class CustomerAdress extends Model
     //FUNCIONES
     public function customer(){
 		//relacion con usuario
-    return $this->belongsTo(CustomerAdress::class);
+    return $this->belongsTo(Customer::class);
   	}
 }

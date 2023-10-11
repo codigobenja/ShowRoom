@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory, SoftDeletes;
-
+    //proteccion de datos
     protected $fillable = [
         'id',
         'nombre',
@@ -33,11 +33,9 @@ class Employee extends Model
 
     //FUNCIONES
     public function user(){
-		//relacion con usuario
-    return $this->belongsTo(User::class);
+      return $this->belongsTo(User::class);
   	}
-    public function adress()
-    {
-        return $this->hasMany(EmployeeAdress::class);
+    public function adress(){
+      return $this->hasMany(EmployeeAdress::class);
     }
 }

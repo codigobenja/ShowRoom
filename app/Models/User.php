@@ -51,16 +51,12 @@ class User extends Authenticatable
     ];
 
     //FUNCIONES
-    public function customer()
-    {
-      //relacion con clientes
-        return $this->hasOne(Customer::class);
+    public function customer(){
+    return $this->hasOne(Customer::class);
     }
 
-    public function employee()
-    {
-      //relacion con empleados
-        return $this->hasOne(Employee::class);
+    public function employee(){
+      return $this->hasOne(Employee::class);
     }
     /*
     public function passwordHistories(){

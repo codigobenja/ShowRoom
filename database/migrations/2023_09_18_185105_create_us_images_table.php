@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('us_images', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('us_id')->unsigned();
+            $table->foreign('us_id')->references('id')->on('us');
+            $table->string('url');
+            $table->mediumText('extracto')->nullable();
             $table->timestamps();
         });
     }

@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventory_images', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('inventory_id')->unsigned();
+            $table->foreign('inventory_id')->references('id')->on('inventories');
+            $table->string('url');
             $table->timestamps();
         });
     }

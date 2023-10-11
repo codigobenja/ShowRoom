@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('news_images', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('new_id')->unsigned();
+            $table->foreign('new_id')->references('id')->on('news');
+            $table->string('url');
             $table->timestamps();
         });
     }

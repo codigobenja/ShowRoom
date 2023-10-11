@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('suppliers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('nombre');
+            $table->string('telefono')->nullable();
+            $table->string('celular');
+            $table->string('empresa');
+            $table->string('rfc')->nullable();
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

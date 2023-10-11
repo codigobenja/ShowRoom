@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory, SoftDeletes;
-
+    //proteccion de datos
     protected $fillable=[
        'id',
        'email',
